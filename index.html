@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apna Computer Home</title>
+    <link rel="shortcut icon" href="logo.png" type="image/logo">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body{
+            background-color:rgba(152, 245, 245, 0.429);
+            font-size: 20px;
+            width: 100%;
+            height: 100%;
+        }
+        nav{
+            width: 4%;
+            height: 100%;
+            background-color: rgba(5, 5, 61, 0.881);
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            z-index: 100;
+        }
+        header{
+            width: 96%;
+            height: 5%;
+            background-color: rgb(5, 5, 61);
+            position: fixed;
+            top: 0%;
+            right: 0%;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .mlogo{
+            width: 5%;
+            height: 100%;
+            background-image: url(logo.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /* border-radius: 50px; */
+            border-left: 1px solid rgb(239, 222, 39);
+            border-right: 1px solid rgb(239, 222, 39);
+        }
+        .menu{
+            width: 100%;
+            height: 5%;
+            margin-top: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+        }
+        .lim{
+            width: 80%;
+            height: 5%;
+            background: linear-gradient(black,white,gray);
+        }
+         .data{
+            height: 60%;
+            left: 0%;
+            width: 100%;
+            position: relative;
+            top: 5%;
+            display: none;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+         }
+         #icon{
+            width: 70%;
+            height: 10%;
+            background-image: url(g2.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+         }
+         #d1{
+            height: 100%;
+            width: 100%;
+            text-decoration: none;
+            color: white;
+            border-radius:10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+         }
+         .gear{
+            width: 100%;
+            height: 7%;
+            position: relative;
+            top: 80%;
+            left: 5%;
+            border-radius: 10px;
+            background-image: url(g2.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+         }
+         .cd{
+            width: 95%;
+            position: relative;
+            left: 4.5%;
+            height: 220px;
+            /* background-color: white; */
+            top: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         }
+         .cn{
+            height: 100%;
+            width: 80%;
+            padding-left: 10px;
+            /* background-color: yellow; */
+         }
+         .cn h1{
+            color: navy;
+            text-shadow: 2px 2px 1px cyan;
+            margin-left: 5%;
+         }
+         .cn p{
+            margin-left: 5%;
+            color: black;
+            font-size: 15px;
+            /* text-shadow: 2px 2px 1px cyan; */
+         }
+         .cn1{
+            height: 100%;
+            width: 20%;
+            background-image: url(logo.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: 2s;
+            
+         }
+         .cn1:hover{
+            height: 100%;
+            width: 25%;
+            margin-right: 3%;
+            background-image: url(logo.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 70px;
+            box-shadow: 2px 2px 10px cyan;
+            border: 1px solid yellow;
+            
+         }
+         .land{
+            width: 95%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: cyan;
+            position: relative;
+            text-shadow: 3px 3px 1px navy;
+            left: 4.5%;
+            top: 80px;
+         }
+         .land:hover{
+            width: 95%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: cyan;
+            position: relative;
+            text-shadow: 3px 3px 1px navy;
+            left: 4.5%;
+            top: 80px;
+            border-bottom: 3px dashed rgb(239, 222, 39);
+         }
+         .main{
+            height: 50px;
+            width: 15%;
+            background-color: rgba(5, 5, 61, 0.881);
+            bottom: 3%;
+            left: 4%;
+            position: fixed;
+            display: none;
+            align-items: center;
+            justify-content: space-around;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            z-index: 100;
+         }
+         .opt{
+            width: 30%;
+            height: 100%;
+            background-image: url(g2.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+         }
+         .info{
+            width: 85%;
+            position: relative;
+            left: 10%;
+            top: 150px;
+            height: 250px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: .5px .5px 1px cyan;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+         }
+         #imh{
+            width: 65%;
+            height: 100%;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+         }
+         #imh1{
+            width: 35%;
+            height: 100%;
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+            background-image: url(computer.webp);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-left: 3px solid rgb(239, 222, 39);
+         }
+         #imh h2{
+            margin-left: 20px;
+            margin-top: 10px;
+            width: 90%;
+            border-bottom: 2px dashed rgb(239, 222, 39);
+            color: rgb(239, 222, 39);
+            text-shadow: 1px 1px 1px rgba(5, 5, 61, 0.881);
+         }
+         #imh h2:hover .pro{
+            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(239, 222, 39);
+            text-shadow: 1px 1px 1px rgba(5, 5, 61, 0.881);
+            position: absolute;
+            top: -70%;
+            left: 15%;
+            width: 20%;
+            height: 200px;
+         }
+         #imh p{
+            font-size: 16px;
+            width: 80%;
+            margin-left: 10%;
+            margin-top: 20px;
+            color: rgba(5, 5, 61, 0.881);
+         }
+         .com{
+            width: 85%;
+            position: relative;
+            left: 10%;
+            top: 200px;
+            height: 300px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: .5px .5px 1px cyan;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+         }
+         #com1{
+            width: 35%;
+            height: 100%;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            border-right: 3px solid rgb(239, 222, 39);
+            background-image: url(computer1.jpeg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+         }
+         #com2{
+            width: 65%;
+            height: 100%;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+         }
+         #com2 h2{
+            margin-left: 20px;
+            margin-top: 10px;
+            width: 90%;
+            border-bottom: 2px dashed rgb(239, 222, 39);
+            color: rgb(239, 222, 39);
+            text-shadow: 1px 1px 1px rgba(5, 5, 61, 0.881);
+         }
+         #com2 h2:hover .pro2{
+            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: -60%;
+            left:50%;
+            width: 20%;
+            height: 200px;
+            color: rgb(239, 222, 39);
+            text-shadow: 1px 1px 1px rgba(5, 5, 61, 0.881);
+         }
+         #com2 p{
+            font-size: 16px;
+            width: 80%;
+            margin-left: 10%;
+            margin-top: 20px;
+            color: rgba(5, 5, 61, 0.881);
+         }
+         .def{
+            width: 85%;
+            position: relative;
+            left: 10%;
+            top: 250px;
+            height: 300px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: .5px .5px 1px cyan;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+         }
+         #def2{
+            width: 35%;
+            height: 100%;
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+            border-left: 3px solid rgb(239, 222, 39);
+            background-image: url(computer2.jpeg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+         }
+         #def1{
+            width: 65%;
+            height: 100%;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+         }
+         #def1 h2{
+            margin-left: 20px;
+            margin-top: 10px;
+            width: 90%;
+            border-bottom: 2px dashed rgb(239, 222, 39);
+            color: rgb(239, 222, 39);
+            text-shadow: 1px 1px 1px rgba(5, 5, 61, 0.881);
+         }
+         #def1 h2:hover .pro3{
+            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: -55%;
+            left: 28%;
+            width: 20%;
+            height: 200px;
+            color: rgb(239, 222, 39);
+            text-shadow: 1px 1px 1px rgba(5, 5, 61, 0.881);
+         }
+         #def1 p{
+            font-size: 16px;
+            width: 80%;
+            margin-left: 10%;
+            margin-top: 20px;
+            color: rgba(5, 5, 61, 0.881);
+         }
+         .im3_card{
+            width: 85%;
+            position: relative;
+            left: 10%;
+            top: 350px;
+            height: 300px;
+            border-left: 3px solid rgb(5, 5, 61);
+            border-right: 3px solid rgb(5, 5, 61);
+            border-bottom: 3px solid rgb(5, 5, 61);
+            border-top-right-radius: 50%;
+            border-top-left-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-bottom-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background-color:lightgray;
+         }
+         
+         #im3{
+            background-image: url(backg.webp);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 40%;
+            height: 300px;
+            position: absolute;
+            bottom: 0%;
+            left: 7%;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            background-color: rgb(239, 222, 39);
+            border: 3px solid rgba(5, 5, 61, 0.881);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+         }
+         #im2{
+            background-image: url(backg.webp);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 40%;
+            height: 300px;
+            position: absolute;
+            bottom: 0%;
+            right: 7%;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            border: 3px solid rgba(5, 5, 61, 0.881);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+         }
+         .ques{
+            width: 50%;
+            height: 65%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+         }
+         .not{
+            width: 80%;
+            height: 15%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 1px navy;
+            font-size: 30px;
+         }
+         .btn a{
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            transition: .5s;
+         }
+         .btn a:hover{
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            background-color: rgb(5, 5, 61);
+            color: white;
+            box-shadow: 2px 2px 5px cyan,-2px -2px 5px cyan;
+         }
+         .btn{
+            width: 60%;
+            height: 15%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            border: 1px solid rgb(5, 5, 61);
+            
+         }
+         .last{
+            width: 96%;
+            position: relative;
+            left: 4%;
+            top: 500px;
+            height: 400px;
+            background-color:rgba(5, 5, 61, 0.881);
+            box-shadow: .5px .5px 1px cyan;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+         }
+         .list{
+            width: 35%;
+            height: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+         }
+         #l1{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+            box-shadow: 0px 1px 1px cyan;
+         }
+         #l1 li{
+            list-style: none;
+            width: 100%;
+            height: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         }
+         #l1 li a{
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            width: 90%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+         }
+         #l1 li a:hover{
+            text-decoration: none;
+            color: red;
+            font-size: 17px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+         }
+         .lastbaar{
+            width: 96%;
+            height: 5%;
+            background-color: rgb(5, 5, 61);
+            position: fixed;
+            bottom: 0%;
+            left: 4%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         }
+         .icocard{
+            width: 30%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+         }
+         .ico{
+            width: 10%;
+            height: 100%;
+            box-shadow: 0px 1px 1px cyan;
+         }
+         #ico1 a{
+            background-image: url(ctyb.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: block;
+            height: 100%;
+            width: 100%;
+         }
+         #ico2 a{
+            background-image: url(twit.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: block;
+            height: 100%;
+            width: 100%;
+         }
+         #ico3 a{
+            background-image: url(insico.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: block;
+            height: 100%;
+            width: 100%;
+         }
+         #ico4 a{
+            background-image: url(fbt.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: block;
+            height: 100%;
+            width: 100%;
+         }
+         .pro{
+            position: absolute;
+            top: -70%;
+            left: 15%;
+            width: 20%;
+            height: 200px;
+            background-color: cyan;
+            box-shadow: -1px -1px 5px gray;
+            border-top-right-radius: 50%;
+            border-top-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+         }
+         
+         .pro2{
+            position: absolute;
+            top: -60%;
+            left:50%;
+            width: 20%;
+            height: 200px;
+            background-color: cyan;
+            box-shadow: -1px -1px 5px gray;
+            border-top-right-radius: 50%;
+            border-top-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+         }
+         
+         .pro3{
+            position: absolute;
+            top: -55%;
+            left: 28%;
+            width: 20%;
+            height: 200px;
+            background-color: cyan;
+            box-shadow: -1px -1px 5px gray;
+            border-top-right-radius: 50%;
+            border-top-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+         }
+         
+         .cir{
+            width: 90%;
+            height: 90%;
+            background-color: rgb(239, 222, 39);
+            border-radius: 50%;
+            box-shadow: -1px -1px 5px gray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         }
+         .cir a{
+            text-decoration: none;
+            color: navy;
+            font-size: 20px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+         }
+         .cir a:hover{
+            text-decoration: none;
+            color: rgb(239, 222, 39);
+            font-size: 20px;
+            background-color:rgb(5, 5, 61);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+         }
+         .AI{
+            width: 5rem;
+            height:3rem;
+            background-color:rgb(5, 5, 61);
+            position: fixed;
+            right: -2.5rem;
+            transform: rotate(62deg);
+            bottom: 3.5rem;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+         }
+         .AI p{
+            height: 100%;
+            width: 100%;
+            transform: rotate(-62deg);
+            padding-left: 15px;
+         }
+         .mainAI{
+            width: 1%;
+            opacity: 0;
+            height: 100%;
+            background-color: #333;
+            position: fixed;
+            top: 0%;
+            right: 0%;
+            z-index: 1000000;
+         }
+        
+    </style>
+</head>
+<body>
+     <!-- top baar  -->
+    <header>
+      <div class="mlogo"></div>
+      <div class="mlogo"></div>
+      <div class="mlogo"></div>
+      <div class="mlogo"></div>
+      <div class="mlogo"></div>
+      <div class="mlogo"></div>
+      <div class="mlogo"></div>
+      <div class="mlogo"></div>
+      <div class="mlogo"></div>
+      <div class="mlogo"></div>
+      <div class="mlogo"></div>
+      <div class="mlogo"></div>
+      <div class="mlogo"></div>
+      <div class="mlogo"></div>
+      <div class="mlogo"></div>
+    </header>
+    <!-- side nav baar  -->
+    <nav>
+        <div class="menu" onclick="on()">
+                <div class="lim"></div>
+                <div class="lim"></div>
+                <div class="lim"></div>
+                <div class="lim"></div>    
+        </div>
+        <div class="data">
+            <div id="icon"><a href="#" id="d1"></a></div>
+            <div id="icon"><a href="#" id="d1"></a></div>
+            <div id="icon"><a href="#" id="d1"></a></div>
+            <div id="icon"><a href="#" id="d1"></a></div>
+            <div id="icon"><a href="#" id="d1"></a></div>
+            <div id="icon"><a href="#" id="d1"></a></div>
+            <div id="icon"><a href="#" id="d1"></a></div>
+            <div id="icon"><a href="#" id="d1"></a></div>
+        </div>
+<!-- bottom gear click button  -->
+        <div class="gear" onclick="mon()">
+            
+        </div>
+    </div>
+    </nav>
+<!-- bottom gear display = none  -->
+    <div class="main">
+            <div class="opt"><a href="#"></a></div>
+            <div class="opt"><a href="#"></a></div>
+            <div class="opt"><a href="#"></a></div>
+    </div>
+
+    <!-- apna compute card -->
+    <div class="cd">
+        <div class="cn">
+            <h1>Apna Computer Center</h1> <br>
+            <p>
+                 <strong>Apna Computer Center</strong> is your go-to destination for learning computer programming. <br>
+                 We offer a wide range of tutorials and resources to help you master programming languages and <br>
+                  technologies. Our courses are designed to be comprehensive, yet easy to understand, making <br>
+                   them suitable for learners of all levels. Whether you're interested in web development, data <br>
+                    science, or software engineering, we have the right content for you. Join us and start your <br>
+                     programming journey today!
+            </p>
+        </div>
+        <div class="cn1"></div>
+    </div>
+
+    <div class="land">Landing Page</div>
+
+    <!-- Information card  -->
+    <div class="info">
+        <div id="imh">
+            <h2>Information
+               <div class="pro">
+                  <div class="cir">
+                     <a href="#">Click here to <br> know more</a>
+                  </div>
+               </div>
+            </h2>
+            <p>
+                <strong>Apna Computer Center</strong> is your go-to destination for learning computer programming. <br>
+                We offer a wide range of tutorials and resources to help you master programming languages <br>and 
+                 technologies. Our courses are designed to be comprehensive, yet easy to understand,<br> making 
+                  them suitable for learners of all levels. Whether you're interested in web development,<br> data
+                   science, or software engineering, we have the right content for you. 
+            </p>
+        </div> 
+        <div id="imh1"></div>
+    </div>
+    <!-- computer card  -->
+     <div class="com">
+
+        <div id="com1"></div>
+
+        <div id="com2">
+         <h2>
+            <div class="pro2">
+               <div class="cir">
+                  <a href="#">Click here to <br> know more</a>
+               </div>
+            </div>
+            Computer
+         </h2>
+         <p>
+            <strong>Computers</strong> have revolutionized the way we live, work, and communicate.
+             They are powerful machines capable of processing vast amounts of data at incredible
+              speeds, making them indispensable in today's world. From personal use to industrial
+               applications, computers play a vital role in almost every aspect of modern life. 
+               They enable us to perform complex calculations, store and retrieve information, 
+               and connect with people across the globe. Computers are used in education to enhance
+                learning, in healthcare to improve patient care, and in businesses to streamline
+                 operations. They have also paved the way for advancements in artificial intelligence,
+                  robotics, and space exploration. With the advent of the internet, computers have become
+                   a gateway to a world of information and opportunities. They are not just tools but have
+                    become an integral part of our daily lives, shaping the future of humanity. 
+         </p>
+        </div>
+       </div>
+
+     <!-- definition of computer card  -->
+     <div class="def">
+         <div id="def1">
+            <h2>Definition of Computer
+               <div class="pro3">
+                  <div class="cir">
+                     <a href="#">Click here to <br> know more</a>
+                  </div>
+               </div>
+            </h2>
+            <p>
+               <strong>Definition:</strong> A computer is an electronic device that processes data
+                and performs tasks according to a set of instructions called a program. It operates
+                 by taking input, processing it, and producing output.
+
+               <strong>Explanation:</strong> Computers are versatile machines designed to 
+               handle a wide range of tasks, from simple calculations to complex problem-solving.
+                They consist of hardware components like the CPU, memory, and storage,
+                 which work together to execute instructions. The software, or programs,
+                  provides the instructions that guide the computer's operations. Computers
+                   can process vast amounts of data quickly and accurately, making them essential
+                    in various fields such as education, healthcare, business, and entertainment.
+                     They are capable of storing information, automating repetitive tasks, and
+                      connecting to networks like the internet to access and share resources.
+            </p>
+         </div>
+         <div id="def2"></div>
+     </div>
+     <!-- round card bottom 2 card   -->
+     <div class="im3_card">
+         <div id="im3">
+            <div class="ques"></div>
+            <div class="not">
+               What is Software ?
+            </div>
+            <div class="btn">
+               <a href="#">Click Here to Know More</a>
+            </div>
+         </div>
+
+         <div id="im2">
+            <div class="ques"></div>
+            <div class="not">
+               What is Hardware ?
+            </div>
+            <div class="btn">
+              <a href="#">Click Here to Know More</a>
+            </div>
+         </div>
+     </div>
+<!-- last card for bottom baar  -->
+     <div class="last">
+         <div class="list">
+            <ul id="l1">
+               <li><a href="">home home home home1</a></li>
+               <li><a href="">home home home home2</a></li>
+               <li><a href="">home home home home3</a></li>
+               <li><a href="">home home home home4</a></li>
+               <li><a href="">home home home home5</a></li>
+               <li><a href="">home home home home6</a></li>
+               <li><a href="">home home home home7</a></li>
+               <li><a href="">home home home home8</a></li>
+               <li><a href="">home home home home9</a></li>
+               <li><a href="">home home home home10</a></li>
+            </ul>
+         </div>
+         <div class="list">
+            <ul id="l1">
+               <li><a href="">home home home home1</a></li>
+               <li><a href="">home home home home2</a></li>
+               <li><a href="">home home home home3</a></li>
+               <li><a href="">home home home home4</a></li>
+               <li><a href="">home home home home5</a></li>
+               <li><a href="">home home home home6</a></li>
+               <li><a href="">home home home home7</a></li>
+               <li><a href="">home home home home8</a></li>
+               <li><a href="">home home home home9</a></li>
+               <li><a href="">home home home home10</a></li>
+            </ul>
+         </div>
+     </div>
+
+
+
+  <!-- last baar for social media icon     -->
+     <div class="lastbaar">
+      <div class="icocard">
+         <div class="ico" id="ico1"><a href="#"></a></div>
+         <div class="ico" id="ico2"><a href="#"></a></div>
+         <div class="ico" id="ico3"><a href="#"></a></div>
+         <div class="ico" id="ico4"><a href="#"></a></div>
+      </div>
+     </div>
+
+
+<!-- AI card creation  -->
+ <div class="AI">
+<p>AI</p>
+ </div>
+ <div class="mainAI">
+
+ </div>
+
+
+
+
+
+
+    <!-- yahan se java script shuru hai -->
+    <script>
+       document.querySelector('.AI').addEventListener('click',()=>{
+         // let mn = document.querySelector('.mainAI');
+         // mn.style.width='15%'; 
+         alert("hello")
+       })
+
+        let data = document.querySelector('.data');  
+        let gear = document.querySelector('.main');  
+        function on(){  
+            if(data.style.display=='none'){
+                data.style.display='flex';
+            }  
+            else{
+                data.style.display='none';
+            }
+        }
+
+        function mon(){  
+            if(gear.style.display=='none'){
+                gear.style.display='flex';
+            }  
+            else{
+                gear.style.display='none';
+            }
+        }
+    </script>
+</body>
+</html>
